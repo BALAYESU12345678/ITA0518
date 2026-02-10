@@ -1,0 +1,12 @@
+import cv2
+
+img = cv2.imread("image.jpg")
+if img is None:
+    exit()
+
+roi = img[100:300, 100:300]
+img[0:200, 0:200] = roi
+
+cv2.imshow("ROI Copy", img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
