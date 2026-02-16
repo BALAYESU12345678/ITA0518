@@ -1,0 +1,6 @@
+import cv2
+img = cv2.imread('input.jpg')
+hsv = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
+mask = cv2.inRange(hsv,(0,0,0),(180,255,200))
+res = cv2.bitwise_and(img,img,mask=mask)
+cv2.imshow("BG Removed",res); cv2.waitKey(0)
