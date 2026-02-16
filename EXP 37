@@ -1,0 +1,8 @@
+import cv2
+cap = cv2.VideoCapture(0)
+fg = cv2.createBackgroundSubtractorMOG2()
+while True:
+    ret,frame = cap.read()
+    mask = fg.apply(frame)
+    cv2.imshow("FG",mask)
+    if cv2.waitKey(1)==27: break
